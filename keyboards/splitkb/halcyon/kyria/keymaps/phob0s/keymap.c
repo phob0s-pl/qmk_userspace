@@ -87,12 +87,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------'                                              `-----------------------------------'
  */
     [_SYM] = LAYOUT_split_3x6_5_hlc(
-      _______, KC_EXLM, KC_AT  , KC_HASH, KC_DLR   , KC_PERC,                                     KC_CIRC , KC_AMPR, KC_ASTR,   KC_LPRN,  KC_RPRN, _______,
-      _______, KC_GRV, _______, KC_MINS, KC_PLUS, KC_EQL  ,                                     _______, KC_LCBR, KC_RCBR, KC_PIPE, KC_UNDS, _______,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,_______, KC_LBRC, KC_RBRC, KC_BSLS, KC_DQUO, _______,
+      _______, _______, KC_AT  , KC_HASH, KC_DLR   , KC_PERC,                                     KC_CIRC , KC_LPRN, KC_RPRN,   KC_AMPR,  KC_ASTR, _______,
+      _______, _______, _______, KC_MINS, KC_PLUS, KC_EQL  ,                                     _______, KC_LCBR, KC_RCBR, KC_PIPE, KC_UNDS, _______,
+      _______, _______, _______, KC_GRV, KC_EXLM, _______, _______, _______, _______, _______,_______, KC_LBRC, KC_RBRC, KC_BSLS, KC_DQUO, _______,
                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
      _______, _______,  _______, _______, _______,                                                       _______, _______, _______, _______, _______
-    ),n)]}
+    ),
 
 /*
  * Function Layer: Function keys
