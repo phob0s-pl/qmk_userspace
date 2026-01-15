@@ -21,7 +21,7 @@ enum layers {
 #define ILALT   LALT_T(KC_I)
 #define OLGUI   LGUI_T(KC_O)
 
-# layers
+// layers
 #define MOFN      MO(_FN)
 #define LTESC   LT(_MOUSE,KC_ESC)
 #define LTSPC   LT(_SYM,KC_SPC)
@@ -29,6 +29,11 @@ enum layers {
 #define LTENT   LT(_SYM,KC_ENT)
 #define LTBSPC   LT(_SYM,KC_BSPC)
 #define LTDEL   LT(_SYM,KC_DEL)
+
+//mouse
+#define KC_BTN1  QK_MOUSE_BUTTON_1
+#define KC_BTN2  QK_MOUSE_BUTTON_2
+#define KC_BTN3   QK_MOUSE_BUTTON_3
 
 
 // clang-format off
@@ -83,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `-----------------------------------'                                              `-----------------------------------'
   */
      [_FN] = LAYOUT_elora_hlc(
-       _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 ,  KC_F5 ,                                      KC_F6 , KC_F7  , KC_F8  , KC_F9d  , KC_F10 , KC_F11 ,
+       _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 ,  KC_F5 ,                                      KC_F6 , KC_F7  , KC_F8  , KC_F9   , KC_F10 , KC_F11 ,
        _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, KC_F12 ,
        _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
@@ -178,14 +183,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //
 };
 
-#if defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU),  ENCODER_CCW_CW(KC_VOLD, KC_VOLU),  ENCODER_CCW_CW(KC_PGUP, KC_PGDN),  ENCODER_CCW_CW(KC_PGUP, KC_PGDN)  },
-    [1] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  },
-    [2] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  },
-    [3] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  },
-    [4] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  },
-    [5] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  },
-    [6] = { ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______),  ENCODER_CCW_CW(_______, _______)  },
-};
-#endif
