@@ -1,6 +1,7 @@
 # May need to be changed when adding more pointing devices
 POINTING_DEVICE_ENABLE = yes
-POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
+# ?= so a keymap rules.mk can pick a different driver (e.g. an I2C-wired Cirque)
+POINTING_DEVICE_DRIVER ?= cirque_pinnacle_spi
 
 # May need to be changed when adding more displays
 QUANTUM_PAINTER_ENABLE = yes

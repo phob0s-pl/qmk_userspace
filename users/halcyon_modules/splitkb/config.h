@@ -65,7 +65,7 @@
 #undef I2C_DRIVER
 #undef I2C1_SDA_PIN
 #undef I2C1_SCL_PIN
-#define I2C_DRIVER I2C0
+#define I2C_DRIVER I2CD0 // ChibiOS driver object for RP2040 i2c0 (`I2C0` is not a valid name)
 #define I2C1_SDA_PIN 16
 #define I2C1_SCL_PIN 17
 
