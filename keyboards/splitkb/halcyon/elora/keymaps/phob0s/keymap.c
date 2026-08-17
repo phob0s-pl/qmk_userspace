@@ -1,4 +1,4 @@
-// Keymap: QWERTY + CAGS HRM, mac-first, splitkb Halcyon Elora rev2
+// Keymap: Colemak-DH + CAGS HRM, mac-first, splitkb Halcyon Elora rev2
 // Repo: qmk_userspace (splitkb halcyon branch) overlay na qmk_firmware master
 // Build (jedna kompilacja na moduł, kazda połowa dostaje własny .uf2):
 //   qmk compile -kb splitkb/halcyon/elora/rev2 -km phob0s -e HLC_TFT_DISPLAY=1     -e TARGET=splitkb_halcyon_elora_rev2_phob0s_display
@@ -18,13 +18,13 @@ enum layers {
 
 // --- Home row mods: CAGS (⌃ ⌥ ⌘ ⇧ od małego palca) ---
 #define HM_A LCTL_T(KC_A)
-#define HM_S LALT_T(KC_S)
-#define HM_D LGUI_T(KC_D)
-#define HM_F LSFT_T(KC_F)
-#define HM_J RSFT_T(KC_J)
-#define HM_K RGUI_T(KC_K)
-#define HM_L LALT_T(KC_L)   // LALT po obu stronach: RALT zostaje semantycznie AltGr-em (istotne po CG⇄ na Linuksie)
-#define HM_QUO RCTL_T(KC_QUOT) // ' na home pinky; ; zostaje tylko na warstwie SYM (tak jak było w Colemaku)
+#define HM_R LALT_T(KC_R)
+#define HM_S LGUI_T(KC_S)
+#define HM_T LSFT_T(KC_T)
+#define HM_N RSFT_T(KC_N)
+#define HM_E RGUI_T(KC_E)
+#define HM_I LALT_T(KC_I)   // LALT po obu stronach: RALT zostaje semantycznie AltGr-em (istotne po CG⇄ na Linuksie)
+#define HM_O RCTL_T(KC_O)   // ' na górnym pinky (zamiast ; ze standardowego Colemaka); ; zostaje tylko na warstwie SYM
 
 // --- Kciuki ---
 #define TH_ESC LT(_MEDIA, KC_ESC)
@@ -91,15 +91,15 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-// Base: QWERTY. Skrajne kolumny: lewa ~ / CapsWord / ⇧ / ⌘ (jednoręczne ⌘ZXCV przy
+// Base: Colemak-DH. Skrajne kolumny: lewa ~ / CapsWord / ⇧ / ⌘ (jednoręczne ⌘ZXCV przy
 // trackpadzie), prawa PgUp / PgDn / ⇧ / blokada ekranu. Tab, Bksp i Enter tylko na kciukach.
 // Przy kciukach: ⌘Z ⌘⇧Z (lewa) i fizyczne kliknięcia myszy przy trackpadzie (prawa).
-// ' na home pinky (z ⌃), ; tylko na warstwie SYM.
+// ' na górnym pinky, ; tylko na warstwie SYM.
     [_BASE] = LAYOUT(
      KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                                     KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_PGUP,
-     CW_TOGG, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                                     KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_PGDN,
-     KC_LSFT, HM_A   , HM_S   , HM_D   , HM_F   , KC_G   ,                                     KC_H   , HM_J   , HM_K   , HM_L   , HM_QUO , KC_RSFT,
-     KC_LGUI, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , UNDO   , REDO   , MS_BTN1, MS_BTN2, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, MAC_LCK,
+     CW_TOGG, KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                                     KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT, KC_PGDN,
+     KC_LSFT, HM_A   , HM_R   , HM_S   , HM_T   , KC_G   ,                                     KC_M   , HM_N   , HM_E   , HM_I   , HM_O   , KC_RSFT,
+     KC_LGUI, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , UNDO   , REDO   , MS_BTN1, MS_BTN2, KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, MAC_LCK,
                                 QK_REP , OS_HYP , TH_ESC , TH_SPC , TH_TAB , TH_ENT , TH_BSP , TH_DEL , OS_RALT, APP_LST
     ),
 
@@ -171,18 +171,18 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 );
 // clang-format on
 
-// --- Komba operatorowe (te same pozycje fizyczne co w Colemaku, litery QWERTY) ---
+// --- Komba operatorowe (te same pozycje fizyczne co zawsze, litery Colemak-DH) ---
 enum combo_events {
-    CMB_WALRUS,   // E + D  ->  ":= "
-    CMB_ARROW,    // R + F  ->  "->"
-    CMB_FATARR,   // T + G  ->  "=>"
-    CMB_NENIL,    // V + B  ->  "!= nil"
+    CMB_WALRUS,   // F + S  ->  ":= "
+    CMB_ARROW,    // P + T  ->  "->"
+    CMB_FATARR,   // B + G  ->  "=>"
+    CMB_NENIL,    // D + V  ->  "!= nil"
 };
 
-const uint16_t PROGMEM cmb_walrus[] = {KC_E, HM_D, COMBO_END};
-const uint16_t PROGMEM cmb_arrow[]  = {KC_R, HM_F, COMBO_END};
-const uint16_t PROGMEM cmb_fatarr[] = {KC_T, KC_G, COMBO_END};
-const uint16_t PROGMEM cmb_nenil[]  = {KC_V, KC_B, COMBO_END};
+const uint16_t PROGMEM cmb_walrus[] = {KC_F, HM_S, COMBO_END};
+const uint16_t PROGMEM cmb_arrow[]  = {KC_P, HM_T, COMBO_END};
+const uint16_t PROGMEM cmb_fatarr[] = {KC_B, KC_G, COMBO_END};
+const uint16_t PROGMEM cmb_nenil[]  = {KC_D, KC_V, COMBO_END};
 
 combo_t key_combos[] = {
     [CMB_WALRUS] = COMBO_ACTION(cmb_walrus),

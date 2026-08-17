@@ -1,6 +1,6 @@
 # phob0s — Halcyon Elora rev2
 
-QWERTY, mac-first, CAGS home row mods (Ctrl-Alt-Gui-Shift from pinky: A S D F / J K L '), Chordal Hold + Flow Tap ("timeless HRM"), Caps Word, Repeat Key, one-shot mods on layers, operator combos. `'` sits on the right home pinky (with ⌃); `;` lives on `_SYM` only.
+Colemak-DH, mac-first, CAGS home row mods (Ctrl-Alt-Gui-Shift from pinky: A R S T / N E I O), Chordal Hold + Flow Tap ("timeless HRM"), Caps Word, Repeat Key, one-shot mods on layers, operator combos. `'` sits on the top-row pinky (where standard Colemak puts `;`); `;` lives on `_SYM` only.
 
 Uses the current `users/halcyon_modules` integration (standard `LAYOUT` macro, no legacy matrix overrides).
 
@@ -8,7 +8,7 @@ Uses the current `users/halcyon_modules` integration (standard `LAYOUT` macro, n
 
 | # | Layer | Access | Contents |
 |---|-------|--------|----------|
-| 0 | `_BASE` | default | QWERTY, HRM; outer cols: `` ` ``/CapsWord/⇧/⌘ · PgUp/PgDn/⇧/lock(⌃⌘Q); near thumbs: ⌘Z ⌘⇧Z · LMB RMB; thumbs: Rep/Hyper/Esc/Spc/Tab · Ent/Bspc/Del/⌥R/⌘⇥ |
+| 0 | `_BASE` | default | Colemak-DH, HRM; outer cols: `` ` ``/CapsWord/⇧/⌘ · PgUp/PgDn/⇧/lock(⌃⌘Q); near thumbs: ⌘Z ⌘⇧Z · LMB RMB; thumbs: Rep/Hyper/Esc/Spc/Tab · Ent/Bspc/Del/⌥R/⌘⇥ |
 | 1 | `_NAV` | hold Space | arrows on home, word/line jumps (⌥/⌘), tabs, Mission Control |
 | 2 | `_SYM` | hold Enter | bracket pairs in columns on left hand |
 | 3 | `_NUM` | hold Backspace | numpad on left hand, `. 0 -` on left thumbs |
@@ -16,7 +16,7 @@ Uses the current `users/halcyon_modules` integration (standard `LAYOUT` macro, n
 | 5 | `_FUN` | hold Del | F1–F12 on left hand |
 | 6 | `_MEDIA` | hold Esc | right: screenshots, media, brightness, `CG_TOGG`; left: RGB underglow (W/F/P/B columns = hue/sat/val/speed ±, Q = toggle, Z = next animation), `4`/`5` = TFT backlight |
 
-Combos (left hand, same physical positions as before the QWERTY switch): `E+D → ":= "`, `R+F → "->"`, `T+G → "=>"`, `V+B → "!= nil"`.
+Combos (left hand): `F+S → ":= "`, `P+T → "->"`, `B+G → "=>"`, `D+V → "!= nil"`.
 
 ## macOS setup (vanilla, no Raycast)
 
